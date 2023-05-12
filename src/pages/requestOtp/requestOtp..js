@@ -29,7 +29,6 @@ const RequestOtp = () => {
     setIsAadhaarNumberValid(isValid);
 
     if (isValid) {
-      console.log(`Checking Aadhaar number ${aadhaarNumber}...`);
     } else {
       alert("Please enter a valid 12-digit Aadhaar number");
     }

@@ -7,7 +7,6 @@ function App() {
   const onEmailComplete = () => {
     setEmailComplete(true);
   };
-  console.log("app email c", emailCompleted);
   return (
     <div>
       {emailCompleted ? (

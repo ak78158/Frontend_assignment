@@ -23,7 +23,6 @@ const LoginEmail = ({ onEmailComplete }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (email !== "") {
-      console.log(email);
       onEmailComplete();
     }
   };
