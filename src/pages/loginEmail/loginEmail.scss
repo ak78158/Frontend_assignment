@@ -1,0 +1,115 @@
+$small: 300px;
+$medium: 1000px;
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  margin: auto;
+  border: 1px solid gray;
+  @media screen and (max-width: $small) {
+    width: 100%;
+  }
+  @media screen and (min-width: $medium) {
+    width: 60%;
+  }
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background: rgb(84, 157, 234);
+}
+
+.headerText {
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+}
+.genericLogo {
+  padding: 10px;
+  height: 40px;
+  width: 140px;
+  background: white;
+}
+
+.gplusbutton {
+  background: rgb(238, 67, 67);
+  color: white;
+  width: 100px;
+  height: 40px;
+}
+
+.loginGoogle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding: 30px;
+}
+
+.googleText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  //   justify-content: center;
+}
+.or {
+  h2 {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid gray;
+    line-height: 0.1em;
+    margin: 10px 0 20px;
+  }
+  h2 span {
+    background: #fff;
+    padding: 0 10px;
+  }
+}
+.emailInput {
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  height: 25px;
+}
+
+.normalText {
+  width: 100%;
+  display: flex;
+  //   flex-wrap: wrap;
+}
+
+.emailInputFrom {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.continueBtn {
+  background: rgb(60, 60, 211);
+  color: white;
+  width: 200px;
+  height: 40px;
+}
+//footer
+.emailFooter {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.mainLogo {
+  height: 40px;
+  width: 40px;
+}
+.footerLeft,
+.footerRight {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
