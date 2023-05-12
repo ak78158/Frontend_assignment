@@ -3,9 +3,7 @@ import RequestOtp from "./pages/requestOtp/requestOtp.";
 
 function App() {
   const [emailCompleted, setEmailComplete] = useState(false);
-  const onEmailComplete = () => {
-    setEmailComplete(true);
-  };
+
   return (
     <div>
       {emailCompleted ? (
