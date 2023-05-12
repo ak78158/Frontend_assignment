@@ -1,5 +1,4 @@
 import { useState } from "react";
-import LoginEmail from "./pages/loginEmail/loginEmail";
 import RequestOtp from "./pages/requestOtp/requestOtp.";
 
 function App() {
