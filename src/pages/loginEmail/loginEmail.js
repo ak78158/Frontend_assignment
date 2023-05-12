@@ -24,6 +24,8 @@ const LoginEmail = ({ onEmailComplete }) => {
     e.preventDefault();
     if (email !== "") {
       onEmailComplete();
+    } else {
+      setError("Please enter your Email");
     }
   };
   return (

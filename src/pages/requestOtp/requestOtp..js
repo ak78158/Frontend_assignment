@@ -47,8 +47,9 @@ const RequestOtp = () => {
       handleTitleChange();
     } else {
       if (!isAadhaarNumberValid) setIsAadhaarNumberValid(false);
+      if (!isChecked) setIsChecked(false);
 
-      setIsOTPValid(false);
+      if (otpValue.length !== 4) setIsOTPValid(false);
     }
 
     setIsButtonClicked(true);
@@ -107,55 +108,60 @@ const RequestOtp = () => {
       {showModal && (
         <div className="modal" onClick={handleModalClick}>
           <div className="modal-content">
-            <div className="aadharHeader">Register Aadhar</div>
-            <hr></hr>
-            <div className="">
-              <div className="aadharWithInput">
-                <img src={aadharLogo} alt="aadhar" className="aadharLogo" />
+            <div className="modal-div">
+              <div className="aadharHeader">Register Aadhar</div>
+              <hr></hr>
+              <div className="">
+                <div className="aadharWithInput">
+                  <img src={aadharLogo} alt="aadhar" className="aadharLogo" />
+                  <input
+                    type="tel"
+                    id="aadhaar-number-input"
+                    value={aadhaarNumber}
+                    onChange={handleAadhaarNumberChange}
+                    maxLength={12}
+                  />
+                  <button onClick={handleCheckAadhaarNumber}>Verify</button>
+                </div>
+                {!isAadhaarNumberValid && (
+                  <span style={{ color: "red" }}>
+                    Please enter a valid 12-digit Aadhaar number
+                  </span>
+                )}
+              </div>
+              <div className="checkboxWithLable">
+                <input
+                  type="checkbox"
+                  id="checkbox-with-text"
+                  checked={isChecked}
+                  onChange={handleCheckboxChange}
+                />
+                <label htmlFor="checkbox-with-text">
+                  I agree to e-sign this KYC-Doc to get started
+                </label>
+                {!isChecked && (
+                  <span style={{ color: "red" }}>Please check this box </span>
+                )}
+              </div>
+              <div>
                 <input
                   type="tel"
-                  id="aadhaar-number-input"
-                  value={aadhaarNumber}
-                  onChange={handleAadhaarNumberChange}
-                  maxLength={12}
+                  id="otp-input"
+                  value={otp}
+                  onChange={handleOTPChange}
+                  maxLength={4}
+                  className="otpInput"
                 />
-                <button onClick={handleCheckAadhaarNumber}>Verify</button>
+                {isButtonClicked && !isOTPValid && (
+                  <span style={{ color: "red" }}>
+                    Please enter a valid 4-digit OTP
+                  </span>
+                )}
+                {isButtonClicked && isOTPValid && (
+                  <span style={{ color: "green" }}>Valid OTP</span>
+                )}
+                <button onClick={handleButtonClick}>Submit</button>
               </div>
-              {!isAadhaarNumberValid && (
-                <span style={{ color: "red" }}>
-                  Please enter a valid 12-digit Aadhaar number
-                </span>
-              )}
-            </div>
-            <div className="checkboxWithLable">
-              <input
-                type="checkbox"
-                id="checkbox-with-text"
-                checked={isChecked}
-                onChange={handleCheckboxChange}
-              />
-              <label htmlFor="checkbox-with-text">
-                I agree to e-sign this KYC-Doc to get started
-              </label>
-            </div>
-            <div>
-              <input
-                type="tel"
-                id="otp-input"
-                value={otp}
-                onChange={handleOTPChange}
-                maxLength={4}
-                className="otpInput"
-              />
-              {isButtonClicked && !isOTPValid && (
-                <span style={{ color: "red" }}>
-                  Please enter a valid 4-digit OTP
-                </span>
-              )}
-              {isButtonClicked && isOTPValid && (
-                <span style={{ color: "green" }}>Valid OTP</span>
-              )}
-              <button onClick={handleButtonClick}>Submit</button>
             </div>
           </div>
         </div>
