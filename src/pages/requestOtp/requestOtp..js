@@ -4,7 +4,7 @@ import aadharLogo from "../../assets/images/1200px-Aadhaar_Logo.svg.png";
 const RequestOtp = () => {
   const [showModal, setShowModal] = useState(false);
   const [aadhaarNumber, setAadhaarNumber] = useState("");
-  const [isAadhaarNumberValid, setIsAadhaarNumberValid] = useState(true);
+  const [isAadhaarNumberValid, setIsAadhaarNumberValid] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
   const [otp, setOTP] = useState("");
   const [isOTPValid, setIsOTPValid] = useState(false);
